@@ -28,9 +28,18 @@ SCRAPEOPS_API_KEY = '45b917b8-e489-4188-8909-ac9832fa59f1'
 
 SCRAPEOPS_PROXY_ENABLED = True
 
+EXTENSIONS = {
+        'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+        }
+
 DOWNLOADER_MIDDLEWARES = {
     'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
 }
+
+#DOWNLOADER_MIDDLEWARES = {
+#        'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+#        'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+#        }
 
 
 # Scrapy Feed 
